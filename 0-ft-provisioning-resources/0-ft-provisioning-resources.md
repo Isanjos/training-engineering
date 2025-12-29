@@ -151,12 +151,6 @@ Após o login, você será redirecionado para o painel da Oracle Cloud.
 
 Com sua conta Oracle Cloud Free Tier configurada, agora você pode prosseguir com qualquer laboratório técnico na OCI. **Explore ao máximo seus créditos gratuitos para descobrir tudo o que a Oracle Cloud tem a oferecer!**
 
-## 👥 Agradecimentos
-
-- **Autores** - Caio Oliveira
-- **Autor Contribuinte** - Isabelle Anjos
-- **Última Atualização Por/Data** - Outubro 2024
-
 ## 🛡️ Declaração de Porto Seguro (Safe Harbor)
 
 O tutorial apresentado tem como objetivo traçar a orientação dos nossos produtos em geral. É destinado somente a fins informativos e não pode ser incorporado a um contrato. Ele não representa um compromisso de entrega de qualquer tipo de material, código ou funcionalidade e não deve ser considerado em decisões de compra. O desenvolvimento, a liberação, a data de disponibilidade e a precificação de quaisquer funcionalidades ou recursos descritos para produtos da Oracle estão sujeitos a mudanças e são de critério exclusivo da Oracle Corporation.

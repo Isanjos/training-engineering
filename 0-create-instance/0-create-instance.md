@@ -4,48 +4,20 @@
 
 Demonstrar de forma prática e ágil o provisionamento das soluções dentro do OCI.
 
-O que você aprenderá **durante este workshop**:
-
-- Criar **em poucos cliques** um banco de dados autônomo no Oracle Cloud Infrastructure (OCI);
-- Desenvolver em **20 minutos** uma plataforma low-code para consultas em PDFs;
-- Utilizar modelos de IA Generativa para **coletar informações de documentos em imagem**;
-- Provisionar uma plataforma de **autoatendimento de Análise de Negócio** (Oracle Analytics Cloud);
-
 # ⚠️ **ATENÇÃO**:
 
-- **DOWNLOAD:** Faça o download do ZIP ([ARQUIVOS-FAST-TRACK](https://idi1o0a010nx.objectstorage.us-ashburn-1.oci.customer-oci.com/n/idi1o0a010nx/b/Fast_Track/o/ARQUIVOS_FAST_TRACK.zip)), pois os arquivos serão utilizados nos próximos laboratórios.
+- **DOWNLOAD:** Faça o download do ZIP ([AJUSTAR LINK]()), pois os arquivos serão utilizados nos próximos laboratórios.
 
-- **SENHA:** Durante o provisionamento dos recursos, é necessário a criação de senhas. Utilize a senha recomendada: **WORKSHOPsec2019##**
+- **SENHA:** Durante o provisionamento dos recursos, é necessário a criação de senhas. Utilize SEMPRE a senha recomendada: **WORKSHOPsec2019##**
 
-- **COMPARTMENT:** Realize todos os provisionamentos no compartimento **ROOT**, conforme indicado no tutorial.
+- **COMPARTMENT:** Realize todos os provisionamentos FORA DO compartimento **ROOT**. Considere a criação dos recursos no compartimento criado anteriormente
 
 
-### _**Aproveite sua experiência na Oracle Cloud!**_
-
-## 📌 Introdução
-
->**A única nuvem que oferece serviços de nuvem completos em todo o mundo, entre nuvens ou em seu data center.** 
-1. **Multicloud**
-Faça várias nuvens funcionarem como uma. A Oracle oferece integração direta de banco de dados com o Microsoft Azure, bem como interconexão de alto desempenho.
-2. **Nuvem Pública**
-A única nuvem com um conjunto consolidado de serviços e preços baixos consistentes em regiões de nuvens públicas comerciais e governamentais.
-3. **Nuvem Híbrida**
-Soluções de nuvem confiáveis para praticamente qualquer local, incluindo Oracle Exadata Cloud@Customer, um banco de dados como serviço altamente otimizado já implementado em mais de 60 países.
-4. **Nuvem Dedicada**
-OCI Dedicated Region e Oracle Alloy são os únicos produtos que fornecem mais de 100 serviços a preços de nuvem pública inteiramente em seus data centers.
-![Tipos de Nuvem](images/OCI.png)
-
-### **Recursos e Suporte**:
-
-- **Documentação da Oracle Cloud**: [Documentação do Oracle Cloud Infrastructure](https://docs.oracle.com/pt-br/iaas/Content/home.htm)
-- **Introdução**: [Why Oracle Cloud Infrastructure](https://www.youtube.com/watch?v=ljiUqro6_Mc)
-
+### _**Aproveite sua experiência na Oracle Cloud!**
 
 ## 1️⃣ Validação da Região
 
-1. Faça o login no [Oracle Cloud Infrastructure (OCI)](https://cloud.oracle.com/) e valide se a região de **Chicago** ou **São Paulo** se encontra disponível para uso.
-
-   > **Se sua região não for uma das indicadas, as aplicações que utilizam inteligência artificial generativa não estarão disponíveis.**
+1. Faça o login no [Oracle Cloud Infrastructure (OCI)](https://cloud.oracle.com/) e valide se a região de **Chicago** se encontra disponível para uso.
 
    ![Validate Region](images/validate-region.png " ")
 
@@ -220,12 +192,6 @@ Para visualizar cada instância, você pode clicar no nome da instância ou nave
 🎉🎉 Parabéns, você terminou os Laboratórios de **Criação dos Serviços** 🎉🎉
 
 <br>
-
-## 👥 Agradecimentos
-
-- **Autores** - Caio Oliveira
-- **Autores Contribuintes** - Isabelle Anjos, Gabriela Miyazima, Aristotelles Serra
-- **Última Atualização Por/Data** - Janeiro 2025
 
 ## 🛡️ Declaração de Porto Seguro (Safe Harbor)
 
