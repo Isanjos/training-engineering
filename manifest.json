@@ -6,7 +6,7 @@
     "tutorials": [
         {
             "title": "Get Started",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+            "filename": "../../ft-cloud-0/ft-cloud-0.md"
         },
         {
             "title": "Pré Requisito - Provisionar Recursos",
@@ -37,16 +37,6 @@
             "title": "Lab 5: Manipulação de dados - Ouro",
             "description": "Enriqueça seus dados através de transformações no Analytics Cloud",
             "filename": "../../ft-data-manipulation-gold-5/ft-data-manipulation-gold-5.md"
-        },
-        {
-            "title": "Lab 6: Conexão DBeaver e Consultas SQL",
-            "description": "Explore os recursos do Oracle Analytics Cloud para criar visualizações",
-            "filename": "../../ft-data-connection-6/ft-data-connection-6.md"
-        },
-        {
-            "title": "Need Help?",
-            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }
