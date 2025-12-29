@@ -3,9 +3,14 @@
   "help": " ",
   "tutorials": [
     {
-      "title": "Login na Oracle Cloud",
+      "title": "[INICIAR AQUI SOMENTE SE NÃO CONFIGUROU A CONTA] Configuração do Oracle Free Tier",
+      "filename": "ft-provisioning-resources-0/ft-provisioning-resources-0.md"
+    },
+    {
+      "title": "[INICIAR AQUI SE JÁ POSSUI CONTA] Login na Oracle Cloud",
       "filename": "ft-cloud-0/ft-cloud-0.md"
     },
+
     {
       "title": "Lab 1: Configuração do ambiente Conda no OCI Data Science",
       "filename": "ft-ds-config-1/ft-ds-config-1.md"
