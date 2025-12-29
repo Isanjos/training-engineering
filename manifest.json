@@ -3,33 +3,36 @@
   "help": " ",
   "tutorials": [
     {
-      "title": "[INICIAR AQUI SOMENTE SE NÃO CONFIGUROU A CONTA] Configuração do Oracle Free Tier",
-      "filename": "ft-provisioning-resources-0/ft-provisioning-resources-0.md"
+      "title": "[INICIAR AQUI SOMENTE SE NÃO CONFIGUROU A CONTA] LAB 0 - Configuração do Oracle Free Tier",
+      "filename": "0-ft-provisioning-resources/0-ft-provisioning-resources.md"
     },
     {
-      "title": "[INICIAR AQUI SE JÁ POSSUI CONTA] Login na Oracle Cloud",
-      "filename": "ft-cloud-0/ft-cloud-0.md"
-    },
-
-    {
-      "title": "Lab 1: Configuração do ambiente Conda no OCI Data Science",
-      "filename": "ft-ds-config-1/ft-ds-config-1.md"
+      "title": "[INICIAR AQUI SE JÁ POSSUI CONTA] LAB 0 - Login na Oracle Cloud",
+      "filename": "0-ft-cloud-0/0-ft-cloud.md"
     },
     {
-      "title": "Lab 2: Configuração do Data Flow Studio no OCI Data Science",
-      "filename": "ft-df-studio-config-2/ft-df-studio-config-2.md"
+      "title": " LAB 1 - Criação dos Serviços Utilizados nos Laboratórios",
+      "filename": "0-create-instance/0-create-instance.md"
     },
     {
-      "title": "Lab 3: Manipulação de dados - Bronze",
-      "filename": "ft-data-manipulation-bronze-3/ft-data-manipulation-bronze-3.md"
+      "title": "LAB 2: Configuração do ambiente Conda no OCI Data Science",
+      "filename": "1-ft-ds-config/1-ft-ds-config.md"
     },
     {
-      "title": "Lab 4: Manipulação de dados - Prata",
-      "filename": "ft-data-manipulation-silver-4/ft-data-manipulation-silver-4.md"
+      "title": "LAB 3: Configuração do Data Flow Studio no OCI Data Science",
+      "filename": "2-ft-df-studio-config/2-ft-df-studio-config.md"
     },
     {
-      "title": "Lab 5: Manipulação de dados - Ouro",
-      "filename": "ft-data-manipulation-gold-5/ft-data-manipulation-gold-5.md"
+      "title": "LAB 4: Manipulação de dados - Bronze",
+      "filename": "3-ft-data-manipulation-bronze/3-ft-data-manipulation-bronze.md"
+    },
+    {
+      "title": "LAB 5: Manipulação de dados - Prata",
+      "filename": "4-ft-data-manipulation-silver/4-ft-data-manipulation-silver.md"
+    },
+    {
+      "title": "LAB 6: Manipulação de dados - Ouro",
+      "filename": "5-ft-data-manipulation-gold/5-ft-data-manipulation-gold.md"
     }
   ]
 }
