@@ -6,7 +6,7 @@
     "tutorials": [
         {
             "title": "Get Started",
-            "filename": "../../ft-cloud-0/ft-cloud-0.md"
+            "filename": "../ft-cloud-0/ft-cloud-0.md"
         },
         {
             "title": "Pré Requisito - Provisionar Recursos",
