@@ -1,37 +1,30 @@
 {
-    "workshoptitle": "OCI Data & AI Fast Track - For Data Engineering",
-    "help": "",
-    "variables": ["../../variables/variables.json",
-        "../../variables/variables-in-another-file.json"],
-    "tutorials": [
-        {
-            "title": "Login na Oracle Cloud",
-            "filename": "ft-cloud-0/ft-cloud-0.md" 
-        },
-        {
-            "title": "Lab 1: Configuração do ambiente Conda no OCI Data Science",
-            "description": "Aprenda a configurar o ambiente de desenvolvimento no OCI Data Science",
-            "filename": "ft-ds-config-1/ft-ds-config-1.md"
-        },
-        {
-            "title": "Lab 2: Configuração do Data Flow Studio no OCI Data Science ",
-            "description": "Aprenda a criar uma sessão de desenvolvimento no Data Flow Studio",
-            "filename": "ft-df-studio-config-2/ft-df-studio-config-2.md"
-        },
-        {
-            "title": "Lab 3: Manipulação de dados - Bronze",
-            "description": "Aprenda a criar um conjunto de dados a partir de 2 tabelas em um Banco de Dados",
-            "filename": "ft-data-manipulation-bronze-3/ft-data-manipulation-bronze-3.md"
-        },
-        {
-            "title": "Lab 4: Manipulação de dados - Prata",
-            "description": "Enriqueça seus dados através de transformações no Analytics Cloud",
-            "filename": "ft-data-manipulation-silver-4/ft-data-manipulation-silver-4.md"
-        },
-        {
-            "title": "Lab 5: Manipulação de dados - Ouro",
-            "description": "Enriqueça seus dados através de transformações no Analytics Cloud",
-            "filename": "ft-data-manipulation-gold-5/ft-data-manipulation-gold-5.md"
-        }
-    ]
+  "workshoptitle": "OCI Data & AI Fast Track - For Data Engineering",
+  "help": " ",
+  "tutorials": [
+    {
+      "title": "Login na Oracle Cloud",
+      "filename": "ft-cloud-0/ft-cloud-0.md"
+    },
+    {
+      "title": "Lab 1: Configuração do ambiente Conda no OCI Data Science",
+      "filename": "ft-ds-config-1/ft-ds-config-1.md"
+    },
+    {
+      "title": "Lab 2: Configuração do Data Flow Studio no OCI Data Science",
+      "filename": "ft-df-studio-config-2/ft-df-studio-config-2.md"
+    },
+    {
+      "title": "Lab 3: Manipulação de dados - Bronze",
+      "filename": "ft-data-manipulation-bronze-3/ft-data-manipulation-bronze-3.md"
+    },
+    {
+      "title": "Lab 4: Manipulação de dados - Prata",
+      "filename": "ft-data-manipulation-silver-4/ft-data-manipulation-silver-4.md"
+    },
+    {
+      "title": "Lab 5: Manipulação de dados - Ouro",
+      "filename": "ft-data-manipulation-gold-5/ft-data-manipulation-gold-5.md"
+    }
+  ]
 }
