@@ -258,11 +258,15 @@ Opções do Comando:
 
     A sessão do Spark estará pronta para ser utilizada assim que a seguinte mensagem for exibida.
 
-    **ATENÇÃO: Este processo pode demorar alguns minutos.**
+    **ATENÇÃO: Este processo pode demorar alguns minutos (15-25 min).**
 
     Cada vez que você cria uma nova sessão, um novo "Session ID" é atribuído a essa sessão, permitindo que o ambiente de cluster diferencie entre múltiplas sessões que podem estar ocorrendo simultaneamente. Esse ID pode ser utilizado para retomar, gerenciar ou encerrar a sessão específica a qualquer momento.
 
     ![Cluster Pronto](.\images\9-cluster-ready.png)
+
+    > **OBSERVAÇÃO:** Não se preocupe se não aparecer a barra de progresso como na imagem abaixo, a indicação que está sendo criado é o asterisco (*) no lado esquerdo da célula. Aguarde até que ele seja substituído por um número, indicando que a célula foi processada.
+
+    ![Widget-fail](images/widget.png)
 
 3. **Utilize o comando mágico *`%status`* para verificar o status da sessão atual.**
 

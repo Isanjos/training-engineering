@@ -218,8 +218,11 @@ Desta forma, vamos iniciar com o processo de publicação:
     ![Upload dos arquivos no bucket](.\images\31-select-files.png)
 
 5. Após selecionar os arquivos clique em **Upload**.
+   
+> **ATENÇÃO:** OS ARQUIVOS DEVEM ESTAR EXATAMENTE COM O MESMO NOME INDICADO NA IMAGEM, SEM (1) OU OUTRA NOMENCLATURA. O ARQUIVO CÓDIGO_NCM É CSV.
 
-    ![Upload dos arquivos no bucket](.\images\32-confirm-upload.png)
+
+![Upload dos arquivos no bucket](.\images\32-confirm-upload.png)
 
 6. Verifique se os 4 arquivos estão em seu bucket:
 

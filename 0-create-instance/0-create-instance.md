@@ -68,10 +68,15 @@ Antes de criar o ambiente de código, vamos configurar as permissões necessári
     <copy>  
     allow any-user to manage objects in compartment <NOME_DO_COMPARTIMENTO>
     allow any-user to manage object-family in compartment <NOME_DO_COMPARTIMENTO>
+    allow any-user to manage data-catalog-family in compartment <NOME_DO_COMPARTIMENTO>
+    allow any-user to manage dataflow-family in compartment <NOME_DO_COMPARTIMENTO>
     </copy>  
 <!-- Separador -->
 
 ![Policy Data Science](images/data-science-policy.png)
+
+> **ATENÇÃO:** CONFIRA SE TODOS AS POLÍTICAS INDICADAS ACIMA FORAM ADICIONADAS.
+
 
 ## 4️⃣ Criação de Auth Token
 
@@ -124,7 +129,7 @@ Agora iremos criar nosso banco de dados:
 
 ![Secure Acess](images/secure-acess.png)
 
-6. **Vá para o próximo laboratório, não é necessário aguardar a finalização da criação do banco.**
+**Vá para o próximo laboratório, não é necessário aguardar a finalização da criação do banco.**
 
 > **Status do Autonomous Database:**
 > - Ícone amarelo = Em criação; 
@@ -184,8 +189,6 @@ Ao final, você deve ter um total de **6 buckets**
 
 ![Six buckets](images/six-buckets.png)
 
-Você está pronto para prosseguir para o próximo laboratório.
-
 ## 8️⃣ Criação de Metastore
 
 1. Clique no menu **(☰)** e selecione **Analytics & AI ⮕ Data Catalog**
@@ -202,11 +205,15 @@ Você está pronto para prosseguir para o próximo laboratório.
 - **Default managed table location:** oci://bucket-metastore@<NAMESPACE>
 - **Default external table location:** oci://bucket-metastore@<NAMESPACE>
 
-> **ATENÇÃO:** Você deve ajustar o caminho indicado com o NAMESPACE do seu ambiente. Para encontrar esta informação, siga o LABORATÓRIO 5 TAREFA 3 ETAPAS 8 E 9
-
-
+> **ATENÇÃO:** Você deve ajustar o caminho indicado com o NAMESPACE do seu ambiente. Para encontrar esta informação, siga o LABORATÓRIO 5 TAREFA 3 ETAPAS 8 E 9. Por fim, clique em **Create**
 
 ![Modify Metastore](images/modify-metastore.png)
+
+![Metastore Ready](images/metastore-ready.png)
+
+**Vá para o próximo laboratório, não é necessário aguardar a finalização da criação do metastore.**
+
+Você está pronto para prosseguir para o próximo laboratório.
 
 ## 9️⃣ [Extra] Como verificar se os serviços já foram criados? 
 

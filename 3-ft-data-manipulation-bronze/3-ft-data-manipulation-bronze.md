@@ -177,28 +177,31 @@ O namespace é um identificador único do OCI Object Storage, cada conta na Orac
 Este é o nome do arquivo específico localizado dentro do bucket bronze. No contexto desse código, é o arquivo CSV que está sendo lido e processado pelo Spark.
 
 
-## Tarefa 4: Salvando um DataFrame como um Arquivo Delta
+## Tarefa 4: Salvando um DataFrame como um Arquivo Parquet
 
-Neste código, estamos utilizando o Apache Spark para salvar um DataFrame derivado de um arquivo CSV e outros de arquivos JSON no formato *Delta Lake* em um bucket, usando caminhos específicos para cada tipo de dado.
+Neste código, estamos utilizando o Apache Spark para salvar um DataFrame derivado de um arquivo CSV e outros de arquivos JSON no formato Parquet em um bucket, usando caminhos específicos para cada tipo de dado.
 
    1. **Selecione a célula e execute-a com o comando SHIFT + ENTER, ou clique no botão de execução (ícone de 'play') no notebook.**
 
    ![Save Delta Bronze](.\images\9-save-delta-bronze.png)
 
-### *O que é um Arquivo Delta?*
+### *O que é um Arquivo Parquet?*
 
 ---
 
-Pense num arquivo Delta Lake como um álbum de fotos digital onde você pode facilmente adicionar, editar ou deletar fotos. Se você cometer um erro, é fácil desfazer a ação e recuperar a foto como estava antes. Assim como um álbum mantém um registro das suas fotos, o Delta Lake mantém um registro das alterações nos seus dados, tornando o acesso e a gestão deles simples e seguros.
+Pense em um arquivo Parquet como um **arquivo organizado por colunas**, semelhante a um fichário onde todos os documentos do mesmo tipo ficam juntos. Em vez de guardar cada registro completo em sequência (linha por linha), o Parquet armazena os dados **coluna por coluna**, o que torna muito mais rápido acessar apenas as informações necessárias.
 
-Desta forma, corresponde a um tipo de formato de armazenamento que oferece várias vantagens para o processamento e análise de grandes volumes de dados. Ele é construído em cima do Apache Spark e otimiza operações de leitura e gravação, mantendo a integridade dos dados através de transações ACID, que são mecanismos usados para garantir que todas as operações de dados sejam realizadas com segurança e sem erros.
+O Parquet é um formato de armazenamento colunar amplamente utilizado em ambientes de Big Data, especialmente com o Apache Spark. Ele é otimizado para leitura e escrita eficientes, reduzindo o volume de dados lidos do disco e melhorando o desempenho de consultas analíticas.
 
 Salvar dados neste formato é útil porque permite:
 
-- *Gerenciamento de Metadados:* Facilita o rastreamento das alterações feitas nos dados.
-- *Escala:* Lida eficientemente com grandes quantidades de dados.
-- *Desempenho:* Melhora a velocidade de leitura e escrita dos dados.
-- *Confiabilidade:* Garante que os dados não sejam corrompidos, mesmo com várias operações simultâneas.
+* *Armazenamento Colunar:* Acelera consultas que acessam apenas algumas colunas do conjunto de dados.
+* *Compactação Eficiente:* Reduz o espaço ocupado em disco sem perda de informação.
+* *Escala:* Funciona muito bem com grandes volumes de dados distribuídos.
+* *Desempenho:* Melhora significativamente a performance de leitura em workloads analíticos.
+* *Compatibilidade:* Pode ser lido por diversas ferramentas como Spark, Hive, Presto, Trino e outros motores analíticos.
+
+Dessa forma, o Parquet é uma excelente escolha para a camada **bronze**, onde o foco está em armazenar os dados de forma eficiente, padronizada e pronta para processamento posterior.
 
 Parabéns, você terminou esse laboratório! 🎉
 

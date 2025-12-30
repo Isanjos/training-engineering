@@ -197,12 +197,85 @@ Este código usa Matplotlib para criar um gráfico de barras do valor total de i
 
 ![Gráfico Exportação e Importação](.\images\24-matplot-region.png)
 
+## (OPCIONAL) Tarefa 7: Análise de dados usando o Charts do Autonomous AI Database
+
+Uma alternativa ao Matplotlib podemos utilizar o Charts que é uma das ferramentas do Database Actions do Autonomous AI Database
+
+> **Charts** permite que você crie gráficos a partir do Autonomous AI Database. O gráfico é construído usando o comando SQL de entrada. Os painéis permitem que você agrupe gráficos para criar relatórios.
+
+Use o usuário que possui acesso as bases carregadas dentro do Autonomous AI Database, o usuário DT\_DEMO\_SOURCE criado e utilizado no laboratório do Data Transforms possui acesso a tabela EXPORTACAO\_BRASIL que será utilizada para fazer a análise nesta Tarefa. 
+
+Para navegar até a página de Gráficos e Painéis, faça uma das seguintes ações:
+
+- Na página inicial do Database Actions, selecione a aba Desenvolvimento e clique em Gráficos. 
+- Clique no ícone do seletor (Menu Hamburguer) para exibir o menu de navegação. Em Desenvolvimento, selecione Gráficos.
+
+![Acessando o Charts](.\images\25-charts.png)
+
+O Charts automaticamente iniciará o Tour do produto, aperte no **X** para cancelar o tour ou navegue-o utilizando o botão de **Próximo**, para iniciar o tour novamente só é necessário clicar no simbolo de binóculos.
+
+![Inicio do Charts](.\images\26-acessando-charts.png)
+
+Nessa Tarefa iremos replicar uma das análises feitas usando Matplotlib criando um Chart, para criar um Chart clique em **Create** e depois **New Chart**
+
+![Criando o Chart](.\images\27-criando-chart.png)
+
+Feito isso uma janela de criação de Chart se abrirá, e preencheremos os dados da seguinte maneira, após preenchido clique em **Next**:
+
+- Chart Name: Exportacao Brasil
+- Published: Ligado
+- Description: Estado brasileiro que mais exportou mercadorias nos últimos 6 meses
+- Protected By Privilege: Not protected
+
+![Criando o Chart](.\images\28-create-a-chart.png)
+
+
+### **Estado brasileiro que mais exportou mercadorias nos últimos 6 meses:**
+
+---
+
+
+O código SQL abaixo filtra as exportações do ano de 2023 entre março e agosto, agrupa por estado e calcula o valor total das importações por estado. Os estados são então ordenados pelo valor total de importações em ordem decrescente, e o resultado é convertido para um DataFrame do Pandas para análise e visualização dos estados com o maior volume de importações, clique em **Preview** para visualizar o grafico após a inserção do código SQL e assim que finalizado clique em **Create** para criar o Chart.
+
+```
+<copy>
+SELECT 
+    SG_UF_NCM,
+    SUM(VL_FOB) AS total_import_value
+FROM
+    EXPORTACAO_BRASIL
+WHERE
+    CO_ANO = 2023 AND
+    CO_MES >= 3 
+GROUP BY SG_UF_NCM
+</copy>
+```
+
+Para o gráfico ficar exatamente igual ao laboratório anterior iremos preencher da seguinte maneira as opções ao lado da query:
+
+- Chart Type: Bar Chart 
+- Orientation: Vertical
+- X axis label: estado
+- Y axis label: valor total de importacoes
+- Label Column: Preenchido automaticamente mas ela será a coluna SG\_UF\_NCM
+- Value Column: Preenchido automaticamente mas ela será a coluna TOTAL\_IMPORT\_VALUE
+- Coordinate system: Cartesian
+- Sorting: Descending
+
+![Exportação e Importação por Região](.\images\29-create-a-chart.png)
+
+Feito isso na tela principal do Charts você verá o seu chart criado e publicado, para visualiza-lo basta clicar no simbolo de um quadradinho com uma seta ele abrirá uma nova pagina e assim você acessará o seu grafico, note que caso o dado altere dentro do Autonomous, ele automaticamente atualizará.
+
+![Exportação e Importação por Região](.\images\30-access-chart.png)
+
+![Exportação e Importação por Região](.\images\31-accessed-chart.png)
+
 
 ## Conclusão
 
-Neste laboratório, utilizamos visualizações temporárias no Spark para realizar análises avançadas de dados de exportação e importação do Brasil, utilizando SQL e PySpark para manipular e enriquecer os DataFrames. Implementamos o Star Schema para estruturar as tabelas de forma eficiente, permitindo análises complexas e intuitivas. Criamos tabelas Delta na camada Gold para análise em ferramentas de banco de dados, como o DBeaver, e exploramos relações comerciais com países do Mercosul, identificando os principais produtos negociados e os estados brasileiros com o maior volume de exportações nos últimos seis meses de 2023. Finalmente, visualizamos nossos resultados utilizando a biblioteca Matplotlib, criando gráficos claros e informativos para apresentar nossas descobertas.
+Neste laboratório, utilizamos visualizações temporárias no Spark para realizar análises avançadas de dados de exportação e importação do Brasil, utilizando SQL e PySpark para manipular e enriquecer os DataFrames. Implementamos o Star Schema para estruturar as tabelas de forma eficiente, permitindo análises complexas e intuitivas. Criamos tabelas Delta na camada Gold para análise em ferramentas de banco de dados, como o DBeaver, e exploramos relações comerciais com países do Mercosul, identificando os principais produtos negociados e os estados brasileiros com o maior volume de exportações nos últimos seis meses de 2023. Finalmente, visualizamos nossos resultados utilizando a biblioteca Matplotlib e a ferramenta Charts do Autonomous AI Database, criando gráficos claros e informativos para apresentar nossas descobertas.
 
 ## Autoria
 
 - *Created By/Date* - Thais Henrique, Heloisa Escobar, Isabelle Anjos, Janeiro 2024
-- *Last Updated By* - Isabelle Anjos, Janeiro 2024
+- *Last Updated By* - Armando Neto, Janeiro 2026
