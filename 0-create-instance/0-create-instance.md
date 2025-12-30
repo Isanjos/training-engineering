@@ -20,43 +20,29 @@ Demonstrar de forma prática e ágil o provisionamento das soluções dentro do 
 
    ![Validate Region](images/validate-region.png " ")
 
+## 2️⃣ Criação de Compartimento (SOMENTE SE NÃO HOUVER CRIADO ANTERIORMENTE)
 
-## 2️⃣ Criação do Autonomous Database
+**Como saber se um compartimento já foi criado anteriormente?** ⮕ Siga as instruções abaixo até o passo 2 e verifique se o compartimento já foi criado. Caso já tenha sido criado, não é necessário criar novamente.
 
-1. Clique no menu **(☰)** e selecione **Database ⮕ Autonomous Database**.
-
-![Autonomous Acess](images/Homepage-ADB.png)
-
-2. Na página de gestão de Autonomous Databases, clique em **Create Autonomous Database**.
+1. Clique no menu **(☰)** e selecione **Identity & Security ⮕ Compartments**.
    
-> **ATENÇÃO:** Selecione o **Compartment** criado anteriormente. NÃO SELECIONE O COMPARTMENT DE NOME ```<NomeTenancy>(root)```
+![Compartment Acess](images/compartment.png)
 
-![Create Autonomous](images/CreateADB.png)
-![Create Autonomous](images/CompartmentADB.png)
+2. Na página de gestão dos compartimentos, clique em **Create Compartment**.
 
-3. Selecione **ADW - Data Warehouse**
-![Create Autonomous](images/create-autonomous.png)
+> **ATENÇÃO:** Crie um novo compartimento se houver SOMENTE o compartimento ```<NomeTenancy>(root)``` listado, como indicado abaixo.
 
-4. Escolha a versão 26ai para o banco de dados.
+![Compartment Creating](images/compartment-creation.png)
 
-![Create 23AI](images/create-23ai.png)
+3. Escolha um nome e descrição e clique em **Create Compartment**.
 
-5. Utilize a senha recomendada: **WORKSHOPsec2019##** . Selecione **secure access from everywhere** e clique em **Create Autonomous Database**:
-<br><br>
+![Name Compartment](images/compartment-name.png)
 
-> **ATENÇÃO**: Verifique se utilizou a senha recomendada **WORKSHOPsec2019##**
+4. ATUALIZE A PÁGINA e o compartimento estará listado como indicado abaixo.
 
-![Secure Acess](images/secure-acess.png)
+![List Compartment](images/list-compartment.png)
 
-6. **Vá para o próximo laboratório.**
-
-> **Status do Autonomous Database:**
-> - Ícone amarelo = Em criação; 
-> - Ícone verde = Pronto para uso;
-
-![Yellow ADW](images/yellow-adw.png)
-
-## 3️⃣ Criação de Notebook OCI Data Science
+## 3️⃣ Criação de Políticas
 
 Antes de criar o ambiente de código, vamos configurar as permissões necessárias para a interação entre os serviços.
 
@@ -65,8 +51,8 @@ Antes de criar o ambiente de código, vamos configurar as permissões necessári
 ![Acess Policies](images/acess-policies.png)
 
 
-2. Clique em **Create Policy**. 
-> **ATENÇÃO:** Selecione o **Compartment** com nome de ```<NomeTenancy>(root)```
+2. SELECIONE O COMPARTIMENTO CRIADO e em seguida clique em **Create Policy**. 
+> **ATENÇÃO:** SELECIONE O COMPARTIMENTO CRIADO, não selecione o compartimento com nome de ```<NomeTenancy>(root)```
 <br> 
   
 ![Create Policies](images/create-policies.png)
@@ -88,23 +74,85 @@ Antes de criar o ambiente de código, vamos configurar as permissões necessári
 
 ![Policy Data Science](images/Policies.png)
 
-5. Clique no menu de hambúrger do canto superior esquerdo da tela, selecione **Analytics & AI ⮕ Data Science**
+## 4️⃣ Criação de Auth Token
+
+1. A partir de QUALQUER PÁGINA que esteja na cloud, selecione o ícone do seu profile no canto superior direito.
+
+![Acess Auth](images/acess-auth.png)
+
+2. Em seguida, clique no seu email.
+
+![Email](images/email.png)
+
+3. Selecione **Tokens and Keys ⮕ Generate Token ⮕ Adicine uma descrição ⮕ Generate Token**
+
+![Auth Token](images/auth-token.png)
+
+![Auth Token Description](images/auth-token-desc.png)
+
+4. Clique nos três pontos e selecione **Copy** e salve o conteúdo em um arquivo de texto. Em seguida, clique em **Close**
+
+> **ATENÇÃO:** **NÃO ESQUEÇA DE SALVAR O TOKEN EM ALGUM ARQUIVO DE TEXTO, POIS O TOKEN NÃO SERÁ MOSTRADO NOVAMENTE. CASO O TOKEN NÃO TENHA SIDO SALVO, RECRIE-O.**
+
+![Token](images/token.png)
+
+## 5️⃣ Criação do Autonomous Database
+
+Agora iremos criar nosso banco de dados:
+
+1. Clique no menu **(☰)** e selecione **Oracle AI Database ⮕ Autonomous AI Database**.
+
+![Autonomous Acess](images/Homepage-ADB.png)
+
+2. SELECIONE O COMPARTIMENTO CRIADO e em seguida clique em **Create Autonomous AI Database**.
+   
+> **ATENÇÃO:** Selecione o **Compartment** criado anteriormente. NÃO SELECIONE O COMPARTMENT DE NOME ```<NomeTenancy>(root)```
+
+![Create Autonomous](images/CreateADB.png)
+![Create Autonomous](images/CompartmentADB.png)
+
+3. Selecione **Lakehouse**
+![Create Autonomous](images/create-autonomous.png)
+
+4. Escolha a versão 26ai para o banco de dados.
+
+![Create 23AI](images/create-23ai.png)
+
+5. Utilize a senha recomendada: **WORKSHOPsec2019##** . Selecione **secure access from everywhere** e clique em **Create Autonomous Database**:
+<br><br>
+
+> **ATENÇÃO**: Verifique se utilizou a senha recomendada **WORKSHOPsec2019##**
+
+![Secure Acess](images/secure-acess.png)
+
+6. **Vá para o próximo laboratório, não é necessário aguardar a finalização da criação do banco.**
+
+> **Status do Autonomous Database:**
+> - Ícone amarelo = Em criação; 
+> - Ícone verde = Pronto para uso;
+
+![Yellow ADW](images/yellow-adw.png)
+
+## 6️⃣ Criação de Notebook OCI Data Science
+
+1. Clique no menu **(☰)** e selecione **Analytics & AI ⮕ Data Science**
 
 ![Create Project](images/create-project.png)
 
-6. Clique em **Create Project**, escolha o Compartment: <<'NomeTenancy'>>root, defina um nome para o projeto e em seguida, clique em **Create**, na região inferior da tela.
-> **ATENÇÃO:** Selecione o **Compartment** com nome de ```<NomeTenancy>(root)```
+2. SELECIONE O COMPARTIMENTO CRIADO e em seguida clique em **Create Project**, defina um nome para o projeto e em seguida, clique em **Create**, na região inferior da tela.
+
+> **ATENÇÃO:** Selecione o **Compartment** criado anteriormente. NÃO SELECIONE O COMPARTMENT DE NOME ```<NomeTenancy>(root)```
 
 ![Name Project](images/name-project.png)
 
-7. Selecione o nome do projeto e em seguida, clique em **Create Notebook Session**
+1. Selecione o nome do projeto e em seguida, clique em **Create Notebook Session**
 
 ![Notebook Session](images/notebook-session.png)
 
-8. Considere as seguintes configurações e em seguida, clique em **Create**:
+1. Considere as seguintes configurações e em seguida, clique em **Create**:
 
-- **Name:** dataprev-fast-track
-- **Shape:** VM.Standard.E4.Flex Virtual machine, 1 core OCPU, 16 GB memory. Caso não disponível, selecionar VM.Standard.E3.Flex
+- **Name:** notebook-data
+- **Shape:** VM.Standard.E4.Flex Virtual machine, 1 core OCPU, 16 GB memory. Caso não disponível, selecionar VM.Standard.E5.Flex
 - **Network Resources:** Default Networking ⮕ Public Endpoint
 
 ![Config Notebook Session](images/config-notebook-session.png)
@@ -112,7 +160,7 @@ Antes de criar o ambiente de código, vamos configurar as permissões necessári
 Você está pronto para prosseguir para o próximo laboratório.
 
 
-## 4️⃣ [Extra] Situação das Instâncias 
+## 7️⃣ [Extra] Como verificar se os serviços já foram criados? 
 
 1. Clique no símbolo da Oracle Cloud, no canto superior esquerdo. Na página inicial, você verá os últimos serviços acessados e o status de cada um, conforme mostrado na imagem a seguir.
 
@@ -127,13 +175,6 @@ Para visualizar cada instância, você pode clicar no nome da instância ou nave
 
 ![Autonomous Acess](images/Homepage-ADB.png)
 ![Green ADW](images/green-adw.png)
-
-#### ANALYTICS CLOUD
-
-2. Clique no menu **(☰)** e selecione **Analytics & AI ⮕ Analytics Cloud**. Selecione seu Oracle Analytics.
-
-![Analytics Cloud Acess](images/AcessoAnalytics.png)
-![Green OAC](images/CreateOAC3.png)
 
 #### OCI DATA SCIENCE
 
