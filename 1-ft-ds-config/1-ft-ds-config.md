@@ -188,6 +188,10 @@ Desta forma, vamos iniciar com o processo de publicação:
 
     ![Upload Notebook](.\images\27-click-notebook.png)
 
+4. Selecione o kernel que você acabou de instalar e publicar:
+
+    ![Select Kernel](images/select-kernel.png)
+
 ## Tarefa 5: Upload dos dados brutos no bucket Bronze
 
 **Faça o download dos 4 arquivos abaixo na introdução deste laboratório:**

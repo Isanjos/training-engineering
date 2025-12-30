@@ -63,10 +63,11 @@ Antes de criar o ambiente de código, vamos configurar as permissões necessári
 
 ![Create Policies Manual](images/create-manual-policy.png)
 
-4.Selecione **Show Manual Editor** e adicione a frase abaixo. Copie e cole a frase exatamente como está abaixo, AJUSTANDO PARA O NOME DO SEU COMPARTIMENTO. Em seguida, clique em **Create**.
+4.Selecione **Show Manual Editor** e adicione TODAS AS FRASES abaixo. Copie e cole as frases exatamente como estão abaixo, AJUSTANDO SOMENTE PARA O NOME DO SEU COMPARTIMENTO. Em seguida, clique em **Create**.
 
     <copy>  
     allow any-user to manage objects in compartment <NOME_DO_COMPARTIMENTO>
+    allow any-user to manage object-family in compartment <NOME_DO_COMPARTIMENTO>
     </copy>  
 <!-- Separador -->
 
@@ -157,7 +158,7 @@ Agora iremos criar nosso banco de dados:
 
 Siga para a próxima etapa abaixo.
 
-## 5️⃣ Criação de buckets
+## 7️⃣ Criação de Buckets
 
 1. Clique no menu **(☰)** e selecione **Storage ⮕ Buckets**
 
@@ -168,19 +169,46 @@ Siga para a próxima etapa abaixo.
 ![Create Bucket](images/create-bucket.png)
 
 3. Coloque o nome de **bucket-environment-conda** e clique em **Create Bucket**
-4. Faça o mesmo passo de criação dos seguintes buckets:
+4. Faça o mesmo passo de criação para os buckets a seguir:
    
    - bucket-bronze
-   - bucket-prata
-   - bucket-ouro
-
-Ao final, você deve ter um total de **4 buckets**
+   - bucket-silver
+   - bucket-gold
+   - bucket-df-logs
+   - bucket-metastore
+   - bucket-environment-conda (este já está criado)
 
 ![Create Bucket](images/create-bucket-name.png)
 
+Ao final, você deve ter um total de **6 buckets**
+
+![Six buckets](images/six-buckets.png)
+
 Você está pronto para prosseguir para o próximo laboratório.
 
-## 7️⃣ [Extra] Como verificar se os serviços já foram criados? 
+## 8️⃣ Criação de Metastore
+
+1. Clique no menu **(☰)** e selecione **Analytics & AI ⮕ Data Catalog**
+
+![Acess Data Catalog](images/acess-data-catalog.png)
+
+2. Na esquerda, selecione **Metastore**, selecione o compartimento CRIADO NA ETAPA 2 DESTE LABORATÓRIO, e em seguida clique em **Create Metastore**. O NOME DO SEU COMPARTIMENTO PODE ESTAR DIFERENTE DA IMAGEM.
+
+![Create Metastore](images/create-metastore.png)
+
+3. Verifique se o seu compartimento está selecionado corretamente. Em seguida, coloque as informações indicadas abaixo:
+
+- **Name:** metastore
+- **Default managed table location:** oci://bucket-metastore@<NAMESPACE>
+- **Default external table location:** oci://bucket-metastore@<NAMESPACE>
+
+> **ATENÇÃO:** Você deve ajustar o caminho indicado com o NAMESPACE do seu ambiente. Para encontrar esta informação, siga o LABORATÓRIO 5 TAREFA 3 ETAPAS 8 E 9
+
+
+
+![Modify Metastore](images/modify-metastore.png)
+
+## 9️⃣ [Extra] Como verificar se os serviços já foram criados? 
 
 1. Clique no símbolo da Oracle Cloud, no canto superior esquerdo. Na página inicial, você verá os últimos serviços acessados e o status de cada um, conforme mostrado na imagem a seguir.
 
