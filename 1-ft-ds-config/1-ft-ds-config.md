@@ -39,7 +39,7 @@ Como primeiro passo, devemos fazer o download do arquivo (zip).
 
 **ATENÇÃO: Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.**
 
-Acesse o link para fazer o download: [**Download ZIP**](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/qR8ZNXygj3cjhuxiMygYvDyc65ouy3Cm_hlEQFhkuX-UDH80zem7IoDcQ9ykBpnf/n/idi1o0a010nx/b/LiveLabsData/o/%5BALL_FILLES%5D%20OCI%20Data%20&%20AI%20Fast%20Track%20-%20For%20Data%20Engineering.zip).
+Acesse o link para fazer o download: [**AJUSTAR LINK**]().
     
 Neste momento, iremos utilizar os arquivos abaixo:
 * Livelabs\_DataEng.ipynb
@@ -51,7 +51,7 @@ Neste momento, iremos utilizar os arquivos abaixo:
 
 ## Tarefa 1: Acesso ao OCI Data Science
 
-1.	Após realizar a autenticação, estará na página principal do Oracle Cloud. Nesta página, selecione o menu na região superior esquerda.
+1.	Selecione o menu na região superior esquerda.
 
     ![Acesso Inicial OCI](.\images\1-acess-oci.png)
 
@@ -63,25 +63,25 @@ Neste momento, iremos utilizar os arquivos abaixo:
 
     ![Selecione Data Science](.\images\3-acess-data-science.png)
 
-4.	Na parte inferior esquerda da tela, você verá a seção **compartments**. Certifique-se de que o compartimento **LiveLabs-DataEng** está selecionado. 
+4.	Na parte inferior esquerda da tela, você verá a seção **compartments**. Certifique-se de que o compartimento CRIADO NO LAB 1 TAREFA 2 está selecionado. O NOME DO SEU COMPARTIMENTO PODE ESTAR DIFERENTE DO INDICADO NA IMAGEM.
 
     ![Verificar Compartment](.\images\4-compartment-data-science.png)
 
-    Se não estiver, clique no menu suspenso e escolha essa opção específica.
-
-    ![Selecionar Compartment](.\images\5-compartment-selection.png)
-
-5. Para abrir o projeto que contém o notebook de data science, escolha a opção **Project\_LiveLabs\_Eng**.
+5. Abra o projeto que contém o notebook de data science. O NOME DO SEU PROJETO PODE ESTAR DIFERENTE DO INDICADO NA IMAGEM.
 
     ![Selecionar Projeto](.\images\6-selection-data-science.png)
 
-6. Nesta página, escolha a opção **Notebook\_LiveLabs\_Eng**.
+6. Nesta página, selecione o notebook criado.  O NOME DO SEU NOTEBOOK PODE ESTAR DIFERENTE DO INDICADO NA IMAGEM.
 
     ![Selecionar Notebook](.\images\7-selection-notebook.png)
 
 7. Em seguida, para abrir o notebook de data science, selecione **Open**.
 
     ![Abrir Notebook](.\images\8-open-notebook.png)
+
+8. Você precisará se autenticar novamente, pois estamos entrando dentro do ambiente do serviço.
+
+    ![Authentication Data Science](.\images\auth-ds.png)
 
 ## Tarefa 2: Instalação do ambiente Conda
 
@@ -97,7 +97,7 @@ Neste momento, iremos utilizar os arquivos abaixo:
    
     ![Clicar em instalar](.\images\11-install-pyspark-data-flow.png)
 
-4. Uma janela do terminal irá abrir, apresentando o progresso da instalação. Aguarde a finalização da instalação indicado pela mensagem **"INFO:ODSC:Conda environment has been successfully installed."** 
+4. Uma janela do terminal irá abrir, apresentando o progresso da instalação. AGUARDE A FINALIZAÇÃO DA INSTALAÇÃO indicado pela mensagem **"INFO:ODSC:Conda environment has been successfully installed."** 
    
     ![Aguarde a finalização da instalação](.\images\12-conda-install-complete.png)
 
@@ -140,12 +140,12 @@ Desta forma, vamos iniciar com o processo de publicação:
     ![Retornar Oracle Cloud](.\images\18-cloud-bucket.png)
 
 
-7. Certifique-se de que estamos usando o compartimento **LiveLabs-DataEng** para o bucket que iremos acessar. Use o menu suspenso **Compartments** no lado esquerdo da página para selecionar livelabs.
+7. Certifique-se de que estamos usando o compartimento CRIADO NO LAB 1 TAREFA 2 para o bucket que iremos acessar. O NOME DO SEU COMPARTIMENTO PODE ESTAR DIFERENTE DA IMAGEM.
 
     ![Certificar Compartment](.\images\19-compartment-bucket.png)
 
 
-8. Em seguida, selecione o **bucket-conda-environment**. 
+8. Em seguida, selecione o **bucket-environement-conda**. O NOME DO SEU COMPARTIMENTO PODE ESTAR DIFERENTE DA IMAGEM.
 
     ![Selecionar Bucket](.\images\20-bucket-acess.png)
 

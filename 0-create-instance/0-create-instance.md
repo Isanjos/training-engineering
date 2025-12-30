@@ -57,22 +57,20 @@ Antes de criar o ambiente de código, vamos configurar as permissões necessári
   
 ![Create Policies](images/create-policies.png)
 
-3. Escolha o **Compartment**: <<'NomeTenancy'>>**root**. Em seguida, dê um nome e uma descrição.
+1. Escolha o **Compartment**: <<'NomeTenancy'>>**root**. Em seguida, dê um nome e uma descrição.
  - **NOME: policies-data-science** 
  - **DESCRIÇÃO: Políticas para Data Science**
 
-![Policy Data Science](images/Root10.png)
-![Policy Data Science](images/policy-data-science.png)
+![Create Policies Manual](images/create-manual-policy.png)
 
-4.Selecione **Show Manual Editor** e adicione a frase abaixo. Copie e cole a frase exatamente como está abaixo. Em seguida, clique em **Create**.
+4.Selecione **Show Manual Editor** e adicione a frase abaixo. Copie e cole a frase exatamente como está abaixo, AJUSTANDO PARA O NOME DO SEU COMPARTIMENTO. Em seguida, clique em **Create**.
 
     <copy>  
-    allow any-user to manage generative-ai-family in tenancy
+    allow any-user to manage objects in compartment <NOME_DO_COMPARTIMENTO>
     </copy>  
 <!-- Separador -->
-> **ATENÇÃO:** Não é necessário ajustar o conteúdo da policy, mantenha a frase como indicado acima.
 
-![Policy Data Science](images/Policies.png)
+![Policy Data Science](images/data-science-policy.png)
 
 ## 4️⃣ Criação de Auth Token
 
@@ -145,11 +143,11 @@ Agora iremos criar nosso banco de dados:
 
 ![Name Project](images/name-project.png)
 
-1. Selecione o nome do projeto e em seguida, clique em **Create Notebook Session**
+3. Selecione o nome do projeto e em seguida, clique em **Create Notebook Session**
 
 ![Notebook Session](images/notebook-session.png)
 
-1. Considere as seguintes configurações e em seguida, clique em **Create**:
+4. Considere as seguintes configurações e em seguida, clique em **Create**:
 
 - **Name:** notebook-data
 - **Shape:** VM.Standard.E4.Flex Virtual machine, 1 core OCPU, 16 GB memory. Caso não disponível, selecionar VM.Standard.E5.Flex
@@ -157,8 +155,30 @@ Agora iremos criar nosso banco de dados:
 
 ![Config Notebook Session](images/config-notebook-session.png)
 
-Você está pronto para prosseguir para o próximo laboratório.
+Siga para a próxima etapa abaixo.
 
+## 5️⃣ Criação de buckets
+
+1. Clique no menu **(☰)** e selecione **Storage ⮕ Buckets**
+
+![Acess Buckets](images/acess-bucket.png)
+
+2. Garanta que você está no COMPARTIMENTO CRIADO NA ETAPA 2 DESTE LAB e em seguida clique em **Create Bucket**.
+
+![Create Bucket](images/create-bucket.png)
+
+3. Coloque o nome de **bucket-environment-conda** e clique em **Create Bucket**
+4. Faça o mesmo passo de criação dos seguintes buckets:
+   
+   - bucket-bronze
+   - bucket-prata
+   - bucket-ouro
+
+Ao final, você deve ter um total de **4 buckets**
+
+![Create Bucket](images/create-bucket-name.png)
+
+Você está pronto para prosseguir para o próximo laboratório.
 
 ## 7️⃣ [Extra] Como verificar se os serviços já foram criados? 
 
