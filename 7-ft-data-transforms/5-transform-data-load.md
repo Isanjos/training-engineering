@@ -1,129 +1,140 @@
-# Extract multiple tables from from any source and load to your target without any transformations
+# Carregando os dados do Object Storage para o Autonomous AI Database
 
 
-## Introduction
+## Introdução
 
-This lab introduces you to how Data Transforms can help you set up a data load job from a source to a target without any transformations. The data load job is defined for multiple tables in a schema and both full and incremental modes are supported.
+Este laboratório apresenta como o Data Transforms pode ajudar você a configurar um fluxo de carga de dados de uma fonte para um destino sem quaisquer transformações.
 
-Estimated Time: 30 minutes
+Tempo Estimado: 30 minutos
 
-### Objectives
+### Objetivos
 
-In this workshop, you will learn how to:
-- Extract data from multiple tables in a source and load them to corresponding tables in the target without any transformation.
-- Use various extract and load options.
+Neste workshop, você aprenderá como:
+- Extrair dados de múltiplas tabelas em uma fonte e carregá-los para tabelas correspondentes no destino sem qualquer transformação.
 
-### Prerequisites
+### Pré-requisitos
 
-To complete this lab, you need to have completed the previous labs, so that you have:
+Para completar este laboratório, você precisa ter concluído os laboratórios anteriores, de modo que você tenha:
 
-- Created an Autonomous AI Lakehouse instance
-- Created the users DT\_DEMO\_SOURCE and DT\_DEMO\_DW with appropriate roles
-- Imported the demo data
-- Started the Data Transforms tool and performed the following:
-    - Created SOURCE and DATAWAREHOUSE connections
-    - Imported the entity definitions
-    - Created a project called MY\_WORKSHOP
+- Criado uma instância de Autonomous AI Lakehouse
+- Criado o usuário DT\_DEMO\_SOURCE com os papéis apropriados
+- Iniciado a ferramenta Data Transforms e realizado o seguinte:
+    - Criado a conexão SOURCE
+    - Importado as definições de entidades
+    - Criado um projeto chamado MY\_WORKSHOP
 
 
-## Task 1: Create a data load job
+## Tarefa 1: Criar um job de carga de dados
 
-In this task we will create a data load job to extract MOVIESALES\_CA, MOVIE and TIME tables from our source database, and load into our data warehouse target database. The MOVIE and TIME tables are small and will be loaded in full by truncating the target. However, the MOVIESALES\_CA data can be big since it contains transactional data. We will extract incremental data from this table and merge the data into the target table.
+Nesta tarefa, criaremos três fluxos de carga de dados para extrair as tabelas CODIGO\_VIA, CODIGO\_NCM e EXPORTACAO\_BRASIL\_LIVELABS do nosso Object Storage e carregar no Autonomous AI Database.
 
-1. Navigate to your project and click on **Create Data Load**.
+1. Navegue até o seu projeto e clique em **Create Data Flow**.
 
-    ![Screenshot of the Create Data Load option](images/image_dt_dataload.png)
+    ![Screenshot of the Create Data Flow option](images/Picture16.png)
 
-    Enter the data load name as DataLoad\_SOURCE\_TO\_DW.
+2. Insira o nome do fluxo de carga de dados como DataFlow\_ExportacaoBrasil e clique em **Criar**.
 
-    ![Screenshot of the named data load job](images/image_dt_dataload_name.png)
+    ![Screenshot of the named data flow job](images/Picture17.png)
 
-    Note that there is an option to use GoldenGate. This is an advanced option that allows continuous data replication using an integration with Oracle GoldenGate. In this workshop we will be running bulk data load operations, scheduled to run at regular intervals. This mode of operation is simpler but still suitable for many use cases.
+3. Feito isso aparecerá uma tela para selecionarmos um Schema, iremos selecionar a conexão SOURCE\_BUCKET e o Schema NomedoBucket e clique em **OK**.
 
-    Leave the GoldenGate option unchecked and click **Next**.
+    ![Screenshot da tela de desenvolvimento do Data Flow](images/Picture18.png)
 
-    Enter the following information for your source and click **Next**.
-    - Connect Type: Oracle
-    - Connection: SOURCE\_DATA
-    - Schema: DT\_DEMO\_SOURCE
+4. Feito isso vamos "pegue e arraste" a tabela EXPORTACAO\_BRASIL\_LIVELABS para a tela.
 
-    ![Screenshot of the source configuration for the data load job](images/image_dt_dataload_source.png)
+    ![Screenshot do processo da utilização da tabela](images/Picture19.png)
 
-    Enter the following information for your target and click **Save**.
-    - Connect Type: Oracle
-    - Connection: DATAWAREHOUSE
-    - Schema: DT\_DEMO\_DW
+    Note que cada Data Flow pode ter N tabelas de origem mas apenas uma tabela de destino, no caso do laboratório em questão teremos que criar mais dois data flows para as tabelas CODIGO\_VIA e CODIGO\_NCM.
 
-    Note that in our workshop we are using the same Autonomous AI Database for the source and target connections to keep the setup simple. However, the source and target connections can be entirely different. For example, the source might be a SQL Server database, and the target might be an Autonomous AI Database.
+5. Após a tabela aparecer na área de desenvolvimento do Data Flow, clicaremos no simbolo de tabela com um + para a criação da entidade de destino, lembrando que tudo isso ainda existe apenas dentro do Data Transforms.
 
-    *Note*: Saving takes a few minutes while the tool connects to the data source to collect the table listing and associated metadata.
+    ![Screenshot do processo da criação da tabela de destino](images/Picture20.png)
 
-    ![Screenshot of the target configuration for the data load job](images/image_dt_dataload_target.png)
+6. Feito isso, aparecerá uma tela de criação de uma nova entidade de dados, preencha conforme informações abaixo, após preenchido clique **Próximo**:
 
-2. Now we need to select tables and configure the data load options.
+    - Nome: EXPORTACAO\_BRASIL
+    - Tipo da Entidade: Tabela
+    - Tipo da Conexão: Oracle
+    - Conexão: NomeDoSeuBanco
+    - Schema: DT_DEMO_SOURCE
 
-    Look at the screenshot below and set the appropriate options:
+    ![Screenshot do processo da criação da tabela de destino](images/Picture21.png)
 
-    Select tables MOVIE, MOVIESALES\_CA, TIME with options as below:
+    Neste segundo passo você pode adicionar, remover ou editar as colunas inferidas baseado no DDL dos dados da origem, valide que as colunas QT\_ESTAT, KG\_LIQUIDO e VL\_FOB que foram alteradas na origem, essas alterações foram herdadas nessa tabela de destino, validado isso é para que não haja nenhum alteração aqui, clique em **Próximo**.
+    
+    ![Screenshot do processo da criação da tabela de destino](images/Picture22.png)
 
-    - MOVIE: Target Action: Truncate
-    - MOVIESALES\_CA: Target Action: Incremental Merge, Incremental Column: DAY\_ID, Merge Key: DAY\_ID, CUST\_ID, MOVIE\_ID
-    - TIME:  Target Action: Truncate
+    Neste ultimo passo é apenas uma pré visualização de como ficará a tabela no destino, clique em **Salvar**
 
-    Note that whenever you want to load data incrementally, you need to specify a date column in the source table which will be used to filter incremental rows and also you need to specify the key column or columns which will be used to merge the records in the target. For the full load option you can simply use non-incremental target actions, as we are doing with the MOVIE and TIME tables. These tables are small and loading them in full every time is acceptable.
+    ![Screenshot do processo da criação da tabela de destino](images/Picture23.png)
 
-    ![Screenshot of full data load job definition](images/image_dt_dataload_definition.png)
+7. Feito isso o seu fluxo de dados aparecerá dessa maneira:
 
-3. Click on Save button to save the data load job definition.
+    ![Screenshot do processo da criação da tabela de destino](images/Picture24.png)
 
-    ![Screenshot of the save button](images/image_dt_dataload_save.png)
+    Agora clique no botão de **Salvar** (Simbolo de um Disquete), para que o seu fluxo de dados fique dessa maneira e após isso execute o Fluxo de dados clicando no botão **Executar** (Simbolo de Play)
 
-4. Click on the execute button to start execution of the data load job.
+    ![Screenshot do processo da criação da tabela de destino](images/Picture25.png)
 
-    ![Screenshot of the execute button](images/image_dt_dataload_execute.png)
+    Uma janela de confimação aparecerá, clique em **Iniciar**
 
-    You will see the run status on the bottom right part of your UI. It is going to take approximately 5 minutes to complete the job.
+    ![Screenshot do processo da criação da tabela de destino](images/Picture26.png)
 
-    ![Screenshot of the execution status of the data load job](images/image_dt_dataload_execute_status.png)
+    Clicado em iniciar aparecerá uma nova janela informando que um Job de execução foi criado, é possível clicar no Job e monitora-lo ou clicar no botão OK e essa janela se fechará, clique no **Hyperlink do Job** para abrir a tela de monitoramento do Job.
 
-    The data load process is creating the corresponding tables in the target, scanning the source tables for incremental data (full for the first time) and performing the data movement process. It is also tracking the extracted rows for incremental load so that in the subsequent execution only the new or modified rows are loaded.
+    ![Screenshot do processo da criação da tabela de destino](images/Picture27.png)
 
-    Target tables are created with the same name as in the source database. There are advanced options to deal with potential issues with the table names that may not be accepted in the target. You can optionally use name prefix or quotations to deal with such issues. In our lab we left them as default.
+8. Na Pagina de detalhes do Job é possível monitorar toda a execução do fluxo de dados criado, ver se ele foi completo com sucesso ou se houve algum erro, por aqui é onde pode-se fazer o "debugging" do seu fluxo de dados, a atualização do andamento do Job não é automatica para atualizar clique no simbolo de atualizar no canto superior direito
 
-5. Look at the Data Load Status for job completion. If there is an error then you can click on the job definition and try to debug. For this lab you should expect to see successful completion.
+    ![Screenshot do processo da criação da tabela de destino](images/Picture29.png)
 
-    ![Screenshot of the completed data load job](images/image_dt_dataload_done.png)
+9. **Repita os passos 1 até o 7 para as tabelas CODIGO\_VIA e CODIGO\_NCM**
 
-## Task 2: View the loaded data
 
-1. Navigate to the Home screen by clicking on the top left link and click on **Data Entities**.
+## Tarefa 2: Visualização dos dados carregados
 
-    ![Screenshot of the Data Transforms home page](images/image_data_transforms_home.png)
+1. Acesse novamente o Database actions e clique em **View all database actions**.
 
-2. Filter for the connection DATAWAREHOUSE and you can see the tables MOVIE, MOVIESALES\_CA and TIME listed.
+    ![Screenshot of the Data Transforms home page](images/Picture30.png)
 
-    ![Screenshot of the data warehouse tables](images/image_datawarehouse_tables.png)
+2. Faça o log out do usuário ADMIN.
 
-3. Select MOVIESALES\_CA table and from the right side menu, select the data preview to look at the data.
+    ![Screenshot of the data warehouse tables](images/Picture31.png)
 
-    *Note*: It takes few minutes for the table statistics to be collected by the target database and it may show no statistics in the beginning. However, you can see the data in the preview screen.
+3. Acesse com o usuário DT\_DEMO\_SOURCE
 
-    ![Screenshot of the menu for the movie sales data table](images/image_moviesales_data_menu.png)
+    ![Screenshot of the data warehouse tables](images/Picture32.png)
 
-    After the statistics have loaded, note that the number of rows in the this table is the same as the number of rows observed in the source database as observed in the previous lab.
+4. Vá no menu Hamburguer (Canto superior esquerdo) e clique em **SQL** opção do menu de Desenvolvimento.
 
-    ![Screenshot of the data preview of the movie sales data table](images/image_moviesales_data_target.png)
+    ![Screenshot of the data warehouse tables](images/Picture33.png)
 
-## RECAP
+5. No painel SQL "pegue e arraste" a tabela EXPORTACAO\_BRASIL para a Worksheet.
 
-In this lab, we used Data Transforms to extract multiple tables from a source database and load them to the target in full and incremental modes. We executed this data load job as an ad-hoc process. In practice, these jobs are scheduled to run at regular frequency, and subsequent runs will extract and load only incremental rows (those added or modified since the last run) wherever defined. The scheduler will be covered in later labs in this workshop.
+    ![Screenshot of the data warehouse tables](images/Picture34.png)
 
-You may now **proceed to the next lab**.
+6. Uma janela se abrirá escolha a opção Select e depois clique em **Apply**.
 
-## Acknowledgements
+    ![Screenshot of the data warehouse tables](images/Picture35.png)
 
-- Created By/Date - Jayant Mahto, Product Manager, Autonomous AI Database, January 2023
-- Contributors - Mike Matthews
-- Last Updated By - Jayant Mahto, June 2024
+7. Automaticamente será criado um Select de todas as colunas da tabela na Worksheet, execute clicando no botão com desenho do simbolo play ou utilizando o atalho control + enter 
+
+    ![Screenshot of the data warehouse tables](images/Picture36.png)
+
+8. Visualize os dados carregados pelo seu processo de fluxo de dados criado pelo Data Transforms.
+
+    ![Screenshot of the data warehouse tables](images/Picture37.png)
+
+## RECAPITULAÇÃO
+
+Neste laboratório, usamos o Data Transforms para extrair múltiplas tabelas de Object Storage fonte e carregá-las no destino. Executamos este job de carga de dados como um processo ad-hoc. Na prática, esses jobs são agendados para executar em frequência regular, e execuções subsequentes extrairão e carregarão todas as linhas para que seja incremental é necessário aplicar logicas a mais no fluxo de dados (carga incremental é aquela que adiciona ou modifica os dados desde a última execução).
+
+Você pode agora **prosseguir para o próximo laboratório**.
+
+## Agradecimentos
+
+- Criado Por/Data - Jayant Mahto, Gerente de Produto, Autonomous AI Database, Janeiro 2023
+- Contribuidores - Mike Matthews, Isabelle Anjos, Armando Neto
+- Última Atualização Por - Armando Neto, Janeiro de 2026
 
 Copyright (C)  Oracle Corporation.
