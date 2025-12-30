@@ -27,39 +27,23 @@
       "filename": "7-ft-data-transforms/5-transform-data-load.md"
     },
     {
-      "title": " LAB 5 [DATA TRANSFORMS] - Transformar dados - EXEMPLO SIMPLES",
-      "filename": "7-ft-data-transforms/6-transform-data-simple.md"
-    },
-    {
-      "title": " LAB 6 [DATA TRANSFORMS] - Transformar dados - EXEMPLO COMPLEXO",
-      "filename": "7-ft-data-transforms/7-transform-data-complex.md"
-    },
-    {
-      "title": " LAB 7 [DATA TRANSFORMS] - Criação de Workflow",
-      "filename": "7-ft-data-transforms/8-transform-data-workflow.md"
-    },
-    {
-      "title": " LAB 8 [DATA TRANSFORMS] - Agendamento de Jobs",
-      "filename": "7-ft-data-transforms/9-transform-data-schedule.md"
-    },
-    {
-      "title": "LAB 9 [DATA SCIENCE]: Configuração do ambiente Conda no OCI Data Science",
+      "title": "LAB 5 [DATA SCIENCE]: Configuração do ambiente Conda no OCI Data Science",
       "filename": "1-ft-ds-config/1-ft-ds-config.md"
     },
     {
-      "title": "LAB 10 [DATA SCIENCE]: Configuração do Data Flow Studio no OCI Data Science",
+      "title": "LAB 6 [DATA SCIENCE]: Configuração do Data Flow Studio no OCI Data Science",
       "filename": "2-ft-df-studio-config/2-ft-df-studio-config.md"
     },
     {
-      "title": "LAB 11 [DATA SCIENCE]: Manipulação de dados - Bronze",
+      "title": "LAB 7 [DATA SCIENCE]: Manipulação de dados - Bronze",
       "filename": "3-ft-data-manipulation-bronze/3-ft-data-manipulation-bronze.md"
     },
     {
-      "title": "LAB 12 [DATA SCIENCE]: Manipulação de dados - Prata",
+      "title": "LAB 8 [DATA SCIENCE]: Manipulação de dados - Prata",
       "filename": "4-ft-data-manipulation-silver/4-ft-data-manipulation-silver.md"
     },
     {
-      "title": "LAB 13 [DATA SCIENCE]: Manipulação de dados - Ouro",
+      "title": "LAB 9 [DATA SCIENCE]: Manipulação de dados - Ouro",
       "filename": "5-ft-data-manipulation-gold/5-ft-data-manipulation-gold.md"
     }
   ]
