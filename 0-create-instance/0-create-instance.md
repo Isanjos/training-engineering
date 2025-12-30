@@ -1,19 +1,18 @@
-## Provisionamento de Serviços do OCI
+# Provisionamento de Serviços do OCI
 
-# 🎯 **Objetivos**
+## 🎯 Objetivos
 
 Demonstrar de forma prática e ágil o provisionamento das soluções dentro do OCI.
 
 # ⚠️ **ATENÇÃO**:
 
-- **DOWNLOAD:** Faça o download do ZIP ([AJUSTAR LINK]()), pois os arquivos serão utilizados nos próximos laboratórios.
+- **DOWNLOAD:** Faça o download do ZIP ([AJUSTAR LINK]('')), pois os arquivos serão utilizados nos próximos laboratórios.
 
 - **SENHA:** Durante o provisionamento dos recursos, é necessário a criação de senhas. Utilize SEMPRE a senha recomendada: **WORKSHOPsec2019##**
 
-- **COMPARTMENT:** Realize todos os provisionamentos FORA DO compartimento **ROOT**. Considere a criação dos recursos no compartimento criado anteriormente
+- **COMPARTMENT:** Realize todos os provisionamentos FORA DO compartimento **ROOT**. Considere a criação dos recursos no compartimento criado anteriormente.
 
-
-### _**Aproveite sua experiência na Oracle Cloud!**
+### **Aproveite sua experiência na Oracle Cloud!**
 
 ## 1️⃣ Validação da Região
 
@@ -30,7 +29,7 @@ Demonstrar de forma prática e ágil o provisionamento das soluções dentro do 
 
 2. Na página de gestão de Autonomous Databases, clique em **Create Autonomous Database**.
    
-> **ATENÇÃO:** Selecione o **Compartment** com nome de ```<NomeTenancy>(root)```
+> **ATENÇÃO:** Selecione o **Compartment** criado anteriormente. NÃO SELECIONE O COMPARTMENT DE NOME ```<NomeTenancy>(root)```
 
 ![Create Autonomous](images/CreateADB.png)
 ![Create Autonomous](images/CompartmentADB.png)
@@ -38,7 +37,7 @@ Demonstrar de forma prática e ágil o provisionamento das soluções dentro do 
 3. Selecione **ADW - Data Warehouse**
 ![Create Autonomous](images/create-autonomous.png)
 
-4. Escolha a versão 23ai para o banco de dados:
+4. Escolha a versão 26ai para o banco de dados.
 
 ![Create 23AI](images/create-23ai.png)
 
@@ -57,47 +56,7 @@ Demonstrar de forma prática e ágil o provisionamento das soluções dentro do 
 
 ![Yellow ADW](images/yellow-adw.png)
 
-## 3️⃣ Deletar Instâncias de Compute
-1. Clique no menu **(☰)** e selecione **Compute ⮕ Intences**
-![Compute](images/Compute01.png)
-
-2. Verefique que está no compartimento **Compartimento-Trial**
-![Compute](images/Compute02.png)
-
-3. Selecione as máquinas que devem ser deletadas, clique no botão Actions, escolha **Terminate**
-![Compute](images/Compute03.png)
-
-4. Selecione as caixas de aviso para deletar as máquinas e clique em **Terminate**
-![Compute](images/Compute04.png)
-![Compute](images/Compute05.png)
-
-## 4️⃣ Criação do Oracle Analytics Cloud
-
-1. Clique no menu **(☰)** e selecione **Analytics & AI ⮕ Analytics Cloud**.
-
-![Analytics Cloud Acess](images/AcessoAnalytics.png)
-
-2. Na página de gestão do Oracle Analytics Cloud, clique em **Create Instance**.
-
-> **ATENÇÃO:** Selecione o **Compartment** com nome de ```<NomeTenancy>(root)```
-  
-![Create Analytics Cloud](images/CreateOAC.png)
-
-1. Dê um nome a instância do Analytics Cloud. Selecione o **Compartment** com nome de ```<NomeTenancy>(root)``` e mantenha as outras configurações padrão. Ao finalizar clique em **Create**.
-
-![Configurando Analytics Cloud](images/CreateOAC1.png)
-![Configurando Analytics Cloud](images/CreateOAC2.png)
-
-4. **Vá para o próximo laboratório.**
-
-> **Status do Oracle Analytics Cloud:**
-> - Ícone amarelo = Em criação; 
-> - Ícone verde = Pronto para uso;
-
-![Yellow OAC](images/CreateOAC4.png)
-
-
-## 5️⃣ Criação de Notebook OCI Data Science
+## 3️⃣ Criação de Notebook OCI Data Science
 
 Antes de criar o ambiente de código, vamos configurar as permissões necessárias para a interação entre os serviços.
 
@@ -153,7 +112,7 @@ Antes de criar o ambiente de código, vamos configurar as permissões necessári
 Você está pronto para prosseguir para o próximo laboratório.
 
 
-## 6️⃣ [Extra] Situação das Instâncias 
+## 4️⃣ [Extra] Situação das Instâncias 
 
 1. Clique no símbolo da Oracle Cloud, no canto superior esquerdo. Na página inicial, você verá os últimos serviços acessados e o status de cada um, conforme mostrado na imagem a seguir.
 
