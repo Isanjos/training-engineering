@@ -3,6 +3,10 @@
 
 ## Introdução
 
+>**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OHxlEJHTMp77MLFBqEHikloZ52nVtURGoqdR78Kk_KCZnKhcS0dsx9rrW_MLFnF4/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/zip_livelabs.zip)), pois os arquivos serão utilizados nos  laboratórios.
+<br>
+>**ATENÇÃO: Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.**
+
 Este laboratório apresenta como o Data Transforms pode ajudar você a configurar um fluxo de carga de dados de uma fonte para um destino sem quaisquer transformações.
 
 Tempo Estimado: 30 minutos

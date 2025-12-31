@@ -2,6 +2,10 @@
 
 ## Introdução
 
+>**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OHxlEJHTMp77MLFBqEHikloZ52nVtURGoqdR78Kk_KCZnKhcS0dsx9rrW_MLFnF4/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/zip_livelabs.zip)), pois os arquivos serão utilizados nos  laboratórios.
+<br>
+>**ATENÇÃO: Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.**
+
 Neste laboratório, estaremos trabalhando com a camada prata do nosso data lake, que é crucial para refinar e transformar os dados brutos importados da camada bronze em um formato mais analítico e pronto para insights. A camada prata serve como um estágio intermédio onde os dados são limpos, deduplicados, padronizados e enriquecidos.
 
 Os principais tratamentos de dados que realizaremos incluem:

@@ -2,6 +2,10 @@
 
 ## Introdução
 
+>**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OHxlEJHTMp77MLFBqEHikloZ52nVtURGoqdR78Kk_KCZnKhcS0dsx9rrW_MLFnF4/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/zip_livelabs.zip)), pois os arquivos serão utilizados nos  laboratórios.
+<br>
+>**ATENÇÃO: Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.**
+
 Neste laboratório, você irá aprender a manipular um conjunto de dados seguindo o modelo da estrutura medalhão (bronze, prata e ouro) através do Data Flow Studio, que foi configurado anteriormente dentro do OCI Data Science.
 
 Ao final de cada etapa desta arquitetura medalhão, será importante armazenar as tabelas modificadas em buckets. Isso é necessário devido à natureza do processamento em memória do Data Flow, onde os dados são temporários e se perdem após o encerramento da sessão, tornando essencial a persistência dos dados processados em um armazenamento durável como os buckets.

@@ -2,6 +2,12 @@
 
 ## Introdução
 
+
+>**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OHxlEJHTMp77MLFBqEHikloZ52nVtURGoqdR78Kk_KCZnKhcS0dsx9rrW_MLFnF4/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/zip_livelabs.zip)), pois os arquivos serão utilizados nos  laboratórios.
+<br>
+>**ATENÇÃO: Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.**
+
+
 Neste laboratório, você vai aprender a **instalar e publicar um Ambiente Conda no OCI Data Science**.
 
 O **OCI Data Science** é a plataforma de ciência de dados da **Oracle Cloud Infrastructure (OCI)**. Ela oferece um ambiente **integrado e colaborativo**, onde cientistas de dados e profissionais podem **criar, gerenciar e compartilhar modelos e análises** de forma simples e eficiente.
@@ -32,14 +38,6 @@ Em resumo, o **OCI Data Science** reúne tudo o que você precisa em um só luga
 * Importar o Notebook para utilização
 
 [Oracle Video Hub video scaled to Large size](videohub:1_he6e7ril:large)
-
-### _Download do Repositório_
-
-Como primeiro passo, devemos fazer o download do arquivo (zip).
-
-**ATENÇÃO: Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.**
-
-Acesse o link para fazer o download: [**AJUSTAR LINK**]().
     
 Neste momento, iremos utilizar os arquivos abaixo:
 * Livelabs\_DataEng.ipynb

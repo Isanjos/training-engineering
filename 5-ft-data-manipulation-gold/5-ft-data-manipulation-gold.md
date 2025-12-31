@@ -2,6 +2,10 @@
 
 ## Introdução
 
+>**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OHxlEJHTMp77MLFBqEHikloZ52nVtURGoqdR78Kk_KCZnKhcS0dsx9rrW_MLFnF4/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/zip_livelabs.zip)), pois os arquivos serão utilizados nos  laboratórios.
+<br>
+>**ATENÇÃO: Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.**
+
 Neste laboratório focado na *Camada Ouro*, vamos empregar visualizações temporárias no Spark para efetuar manipulações e análises avançadas de dados.
 
 Inicialmente, as visualizações temporárias são criadas para permitir a execução de consultas SQL sobre os DataFrames. Essas visualizações são *não-persistentes* e existem apenas durante a sessão do Spark, servindo como uma ponte entre o processamento de dados em Spark e técnicas de banco de dados relacional.
