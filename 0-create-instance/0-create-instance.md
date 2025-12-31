@@ -6,7 +6,7 @@ Demonstrar de forma prática e ágil o provisionamento das soluções dentro do 
 
 # ⚠️ **ATENÇÃO**:
 
-- **DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OHxlEJHTMp77MLFBqEHikloZ52nVtURGoqdR78Kk_KCZnKhcS0dsx9rrW_MLFnF4/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/zip_livelabs.zip)), pois os arquivos serão utilizados nos próximos laboratórios.
+- **DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/aR4psHuDVUTRKxcK7ooD2JThAZg8ZrwHVM_qFKmSXsLSz_S_kXNkTBQ4QDOJy5VA/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/livelabs.zip)), pois os arquivos serão utilizados nos próximos laboratórios.
 
 - **SENHA:** Durante o provisionamento dos recursos, é necessário a criação de senhas. Utilize SEMPRE a senha recomendada: **WORKSHOPsec2019##**
 
@@ -82,7 +82,7 @@ Antes de criar o ambiente de código, vamos configurar as permissões necessári
 
 ![Acess Auth](images/acess-auth.png)
 
-2. Em seguida, clique no seu email.
+2. Em seguida, clique no seu usuário. SALVE A INFORMAÇÃO DO SEU USUÁRIO PARA UTILIZARMOS POSTERIORMENTE.
 
 ![Email](images/email.png)
 

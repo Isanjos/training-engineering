@@ -5,7 +5,7 @@
 
 >⚠️ **ATENÇÃO** ⚠️
 <br>
->**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OHxlEJHTMp77MLFBqEHikloZ52nVtURGoqdR78Kk_KCZnKhcS0dsx9rrW_MLFnF4/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/zip_livelabs.zip)), pois os arquivos serão utilizados nos laboratórios. Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.
+>**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/aR4psHuDVUTRKxcK7ooD2JThAZg8ZrwHVM_qFKmSXsLSz_S_kXNkTBQ4QDOJy5VA/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/livelabs.zip)), pois os arquivos serão utilizados nos laboratórios. Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.
 <br>
 >**SENHA:** Durante o provisionamento dos recursos, é necessário a criação de senhas. Utilize SEMPRE a senha recomendada: **WORKSHOPsec2019##**
 <br>
@@ -36,7 +36,7 @@ Para completar este laboratório, você precisa ter concluído os laboratórios 
 
 Nesta tarefa, criaremos três fluxos de carga de dados para extrair as tabelas CODIGO\_VIA, CODIGO\_NCM e EXPORTACAO\_BRASIL\_LIVELABS do nosso Object Storage e carregar no Autonomous AI Database.
 
-1. Navegue até o seu projeto e clique em **Create Data Flow**.
+1. CLIQUE NO NOME DO PROJETO PARA ENTRAR, selecione **Data Flows** no menu à esquerda e clique em **Create Data Flow**.
 
     ![Screenshot of the Create Data Flow option](images/Picture16.png)
 
@@ -44,17 +44,17 @@ Nesta tarefa, criaremos três fluxos de carga de dados para extrair as tabelas C
 
     ![Screenshot of the named data flow job](images/Picture17.png)
 
-3. Feito isso aparecerá uma tela para selecionarmos um Schema, iremos selecionar a conexão SOURCE\_BUCKET e o Schema NomedoBucket e clique em **OK**.
+3. Feito isso aparecerá uma tela para selecionarmos um Schema, iremos selecionar a conexão SOURCE\_BUCKET e o Schema bucket-bronze e clique em **OK**.
 
     ![Screenshot da tela de desenvolvimento do Data Flow](images/Picture18.png)
 
-4. Feito isso vamos "pegue e arraste" a tabela EXPORTACAO\_BRASIL\_LIVELABS para a tela.
+4. Feito isso vamos "pegar e arrastar" a tabela EXPORTACAO\_BRASIL\_LIVELABS para a tela.
 
     ![Screenshot do processo da utilização da tabela](images/Picture19.png)
 
     Note que cada Data Flow pode ter N tabelas de origem mas apenas uma tabela de destino, no caso do laboratório em questão teremos que criar mais dois data flows para as tabelas CODIGO\_VIA e CODIGO\_NCM.
 
-5. Após a tabela aparecer na área de desenvolvimento do Data Flow, clicaremos no simbolo de tabela com um + para a criação da entidade de destino, lembrando que tudo isso ainda existe apenas dentro do Data Transforms.
+5. Após a tabela aparecer na área de desenvolvimento do Data Flow, clique no ícone que apareceu no centro da tela. Em seguida, clicaremos no simbolo de tabela com um + para a criação da entidade de destino, lembrando que tudo isso ainda existe apenas dentro do Data Transforms.
 
     ![Screenshot do processo da criação da tabela de destino](images/Picture20.png)
 
@@ -64,11 +64,19 @@ Nesta tarefa, criaremos três fluxos de carga de dados para extrair as tabelas C
     - Tipo da Entidade: Tabela
     - Tipo da Conexão: Oracle
     - Conexão: NomeDoSeuBanco
-    - Schema: DT_DEMO_SOURCE
+    - Schema: DT\_DEMO\_SOURCE
+
+    >**ATENÇÃO:** Caso apareça o erro abaixo, siga as instruções indicadas. **USUÁRIO:** DT\_DEMO\_SOURCE **SENHA:** WORKSHOPsec2019##
+
+    ![Error DB](images/error-db.png)
+
+    ![Test Connect Error](images/test-connect-error.png)
+
+    Clique em **Next**
 
     ![Screenshot do processo da criação da tabela de destino](images/Picture21.png)
 
-    Neste segundo passo você pode adicionar, remover ou editar as colunas inferidas baseado no DDL dos dados da origem, valide que as colunas QT\_ESTAT, KG\_LIQUIDO e VL\_FOB que foram alteradas na origem, essas alterações foram herdadas nessa tabela de destino, validado isso é para que não haja nenhum alteração aqui, clique em **Próximo**.
+    Neste segundo passo você pode adicionar, remover ou editar as colunas inferidas baseado no DDL dos dados da origem, **valide que as colunas QT\_ESTAT, KG\_LIQUIDO e VL\_FOB que foram alteradas na origem, essas alterações foram herdadas nessa tabela de destino**, validado isso clique em **Próximo**.
     
     ![Screenshot do processo da criação da tabela de destino](images/Picture22.png)
 

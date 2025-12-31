@@ -4,7 +4,7 @@
 
 >⚠️ **ATENÇÃO** ⚠️
 <br>
->**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OHxlEJHTMp77MLFBqEHikloZ52nVtURGoqdR78Kk_KCZnKhcS0dsx9rrW_MLFnF4/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/zip_livelabs.zip)), pois os arquivos serão utilizados nos laboratórios. Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.
+>**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/aR4psHuDVUTRKxcK7ooD2JThAZg8ZrwHVM_qFKmSXsLSz_S_kXNkTBQ4QDOJy5VA/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/livelabs.zip)), pois os arquivos serão utilizados nos laboratórios. Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.
 <br>
 >**SENHA:** Durante o provisionamento dos recursos, é necessário a criação de senhas. Utilize SEMPRE a senha recomendada: **WORKSHOPsec2019##**
 <br>
@@ -36,7 +36,8 @@ Você pode usar a UI de gerenciamento de usuários na página Database Actions, 
 
 ```
 <copy>
-CREATE USER  IDENTIFIED BY <SENHA_PADRAO>
+CREATE USER DT_DEMO_SOURCE
+  IDENTIFIED BY "WORKSHOPsec2019##"
   QUOTA 100M ON data;
 GRANT DWROLE TO DT_DEMO_SOURCE;
 GRANT DATA_TRANSFORM_USER TO DT_DEMO_SOURCE;
@@ -47,11 +48,22 @@ END;
 </copy>
 ```
 
-No restante do workshop, você se conectará como usuário DT_DEMO_SOURCE. Por favor, anote as URLs dos usuários para que você possa se conectar rapidamente como o usuário apropriado.
+![Run Create User](images/run-create-user.png)
+
+![Create User DB](images/create-user-db.png)
+
+No restante do workshop, você se conectará como usuário DT\_DEMO\_SOURCE. Por favor, anote as URLs dos usuários para que você possa se conectar rapidamente como o usuário apropriado.
 
 ## Tarefa 2: Baixar o arquivo de carteira para o seu Autonomous AI Database
 
 Conecte-se ao console do seu Autonomous AI Database no OCI e baixe o arquivo de carteira. Este arquivo será usado posteriormente para criar a conexão com o banco de dados.
+
+![Connection](images/database-connection.png)
+
+![Dowload Wallet](images/download-wallet.png)
+
+![Password Wallet](images/password-wallet.png)
+
 
 Agora você pode **prosseguir para o próximo laboratório**.
 
