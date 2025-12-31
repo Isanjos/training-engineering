@@ -2,9 +2,13 @@
 
 ## Introdução
 
->**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OHxlEJHTMp77MLFBqEHikloZ52nVtURGoqdR78Kk_KCZnKhcS0dsx9rrW_MLFnF4/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/zip_livelabs.zip)), pois os arquivos serão utilizados nos  laboratórios.
+>⚠️ **ATENÇÃO** ⚠️
 <br>
->**ATENÇÃO: Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.**
+>**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OHxlEJHTMp77MLFBqEHikloZ52nVtURGoqdR78Kk_KCZnKhcS0dsx9rrW_MLFnF4/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/zip_livelabs.zip)), pois os arquivos serão utilizados nos laboratórios. Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.
+<br>
+>**SENHA:** Durante o provisionamento dos recursos, é necessário a criação de senhas. Utilize SEMPRE a senha recomendada: **WORKSHOPsec2019##**
+<br>
+> **COMPARTMENT:** Realize todos os provisionamentos FORA DO compartimento **ROOT**. Considere a criação dos recursos no compartimento criado anteriormente.
 
 Neste laboratório, estaremos trabalhando com a camada prata do nosso data lake, que é crucial para refinar e transformar os dados brutos importados da camada bronze em um formato mais analítico e pronto para insights. A camada prata serve como um estágio intermédio onde os dados são limpos, deduplicados, padronizados e enriquecidos.
 

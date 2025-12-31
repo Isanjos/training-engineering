@@ -2,9 +2,13 @@
 
 ## Introdução
 
->**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OHxlEJHTMp77MLFBqEHikloZ52nVtURGoqdR78Kk_KCZnKhcS0dsx9rrW_MLFnF4/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/zip_livelabs.zip)), pois os arquivos serão utilizados nos  laboratórios.
+>⚠️ **ATENÇÃO** ⚠️
 <br>
->**ATENÇÃO: Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.**
+>**DOWNLOAD:** Faça o download do ZIP ([AQUI](https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OHxlEJHTMp77MLFBqEHikloZ52nVtURGoqdR78Kk_KCZnKhcS0dsx9rrW_MLFnF4/n/idi1o0a010nx/b/bucket-livelabs-engineering/o/zip_livelabs.zip)), pois os arquivos serão utilizados nos laboratórios. Se você já realizou o download no primeiro laboratório, não é necessário realizar novamente.
+<br>
+>**SENHA:** Durante o provisionamento dos recursos, é necessário a criação de senhas. Utilize SEMPRE a senha recomendada: **WORKSHOPsec2019##**
+<br>
+> **COMPARTMENT:** Realize todos os provisionamentos FORA DO compartimento **ROOT**. Considere a criação dos recursos no compartimento criado anteriormente.
 
 Este laboratório irá guiá-lo através dos passos para importar os dados de demonstração usados no restante do workshop. 
 
@@ -16,6 +20,8 @@ Para completar este laboratório, você deve já ter:
 - Criado uma instância de Autonomous AI Database
 
 ## Tarefa 1: Criar usuários para o workshop
+
+![SQL Autonomous](images/SQL-autonomous.png)
 
 Conecte-se ao seu Autonomous AI Database como o usuário Admin e crie dois usuários da seguinte forma:
 
