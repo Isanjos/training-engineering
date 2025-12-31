@@ -15,7 +15,7 @@ Uma vez que as manipulações e análises são concluídas no Spark, os dados po
 ### Objetivos
 
 * Utilizar visualizações temporárias no Spark para consultas SQL em DataFrames.
-* Converter DataFrames em tabelas externas para análise em ferramentas como DBeaver.
+* Converter DataFrames em tabelas externas.
 * Analisar relações comerciais do Brasil com outros países, focando em produtos, estados e meios de transporte em 2023.
 * Executar joins complexos para enriquecer dados e realizar análises detalhadas.
 
@@ -66,7 +66,7 @@ A terceira tabela dimensional, *`df_product_dim`*, contém informações sobre a
 
 ![Criar Tabela Product Dim](.\images\7-product-dim-table.png)
 
-Posteriormente, salvamos as tabelas Delta para a camada Gold, pois esses dados serão usados para preencher as tabelas externas. Estas tabelas, com suas estruturas definidas, estarão disponíveis no DBeaver para análises futuras.
+Posteriormente, salvamos as tabelas Parquet para a camada Gold, pois esses dados serão usados para preencher as tabelas externas.
 
 ![Salvar Delta Gold](.\images\8-delta-gold.png)
 
@@ -156,8 +156,6 @@ O mesmo processo é aplicado para as tabelas *`Dim_Pais`*, *`Dim_Via`* e *`Dim_P
     ![Tabela Externa Via](.\images\18-external-table-dim-via.png)
 
     ![Tabela Externa Produto](.\images\19-external-table-dim-product.png)
-
-A criação dessas tabelas externas e a inserção de dados são etapas preparatórias para conectar essas tabelas com a ferramenta de visualização de banco de dados que iremos utilizar, o **DBeaver**. Ao criar tabelas no metastore e fornecer um caminho de localização, os dados podem ser acessados e gerenciados pelo DBeaver, permitindo visualizações, consultas e outras operações de banco de dados.
 
 Parabéns, você terminou esse laboratório! 🎉
 
@@ -273,7 +271,7 @@ Feito isso na tela principal do Charts você verá o seu chart criado e publicad
 
 ## Conclusão
 
-Neste laboratório, utilizamos visualizações temporárias no Spark para realizar análises avançadas de dados de exportação e importação do Brasil, utilizando SQL e PySpark para manipular e enriquecer os DataFrames. Implementamos o Star Schema para estruturar as tabelas de forma eficiente, permitindo análises complexas e intuitivas. Criamos tabelas Delta na camada Gold para análise em ferramentas de banco de dados, como o DBeaver, e exploramos relações comerciais com países do Mercosul, identificando os principais produtos negociados e os estados brasileiros com o maior volume de exportações nos últimos seis meses de 2023. Finalmente, visualizamos nossos resultados utilizando a biblioteca Matplotlib e a ferramenta Charts do Autonomous AI Database, criando gráficos claros e informativos para apresentar nossas descobertas.
+Neste laboratório, utilizamos visualizações temporárias no Spark para realizar análises avançadas de dados de exportação e importação do Brasil, utilizando SQL e PySpark para manipular e enriquecer os DataFrames. Implementamos o Star Schema para estruturar as tabelas de forma eficiente, permitindo análises complexas e intuitivas. Criamos tabelas Parquet na camada Gold para análise em ferramentas de banco de dados, e exploramos relações comerciais com países do Mercosul, identificando os principais produtos negociados e os estados brasileiros com o maior volume de exportações nos últimos seis meses de 2023. Finalmente, visualizamos nossos resultados utilizando a biblioteca Matplotlib e a ferramenta Charts do Autonomous AI Database, criando gráficos claros e informativos para apresentar nossas descobertas.
 
 ## Autoria
 

@@ -31,7 +31,7 @@ Cada uma dessas etapas é fundamental para assegurar que os dados estejam pronto
 * Padronizar nomes de colunas.
 * Tratar valores nulos.
 * Converter tipos de dados adequados.
-* Salvar como arquivo Delta.
+* Salvar como arquivo Parquet.
 
 ## Tarefa 1: Leitura de arquivo Parquet
 
@@ -40,8 +40,6 @@ Agora vamos avançar para o processamento e análise dos dados que importamos an
 ### *Leitura dos Arquivos Parquet no Bucket*
 
 Na etapa anterior, armazenamos nossos DataFrames no formato Parquet. Este script está acessando esses dados de dois locais distintos, correspondendo aos conjuntos de dados originados de arquivos CSV e JSON.
-
- A opção *`header=True`* indica que a primeira linha dos arquivos Parquet contém os cabeçalhos das colunas, e *`inferSchema=True`* permite que o Spark infira automaticamente o esquema dos dados (tipos de colunas) com base nos dados.
 
 1. **Selecione a célula e execute-a com o comando SHIFT + ENTER, ou clique no botão de execução (ícone de 'play') no notebook.**
 
@@ -122,7 +120,7 @@ Após a execução deste código, você deve esperar ver zeros em todas as colun
 
 ![Verificar Valores Nulos](.\images\9-verify-null-values.png)
 
-## Tarefa 5: Conversão do Tipo de Dado e Salvar o Dataframe como Delta
+## Tarefa 5: Conversão do Tipo de Dado e Salvar o Dataframe como Parquet
 
 ### *Conversão de Dados*
 
@@ -131,9 +129,9 @@ As colunas KG\_LIQUIDO e VL\_FOB não foram convertidas para o tipo string porqu
 
 ![Conversão de Dados](.\images\10-convert-type-variable.png)
 
-### *Salvando o Dataframe como Arquivo Delta*
+### *Salvando o Dataframe como Arquivo Parquet*
 
-Após realizar todos os tratamentos necessários no nosso DataFrame, estamos prontos para salvá-lo em um formato otimizado Delta Lake em nosso bucket prata. O arquivo Delta que estamos salvando será a base para as próximas etapas de exploração de dados e para responder a questões importantes do negócio.
+Após realizar todos os tratamentos necessários no nosso DataFrame, estamos prontos para salvá-lo em um formato otimizado Parquet Lake em nosso bucket prata. O arquivo Parquet que estamos salvando será a base para as próximas etapas de exploração de dados e para responder a questões importantes do negócio.
 
 ![Dataframe Delta Prata](.\images\11-delta-silver.png)
 

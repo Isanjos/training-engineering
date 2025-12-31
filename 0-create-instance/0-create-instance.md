@@ -73,8 +73,6 @@ Antes de criar o ambiente de código, vamos configurar as permissões necessári
     </copy>  
 <!-- Separador -->
 
-![Policy Data Science](images/data-science-policy.png)
-
 > **ATENÇÃO:** CONFIRA SE TODOS AS POLÍTICAS INDICADAS ACIMA FORAM ADICIONADAS.
 
 

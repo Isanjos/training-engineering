@@ -43,7 +43,7 @@ O funcionamento do Data Flow pode ser entendido de forma intuitiva como um proce
 
 * Carregamento de dados diretamente de um bucket da OCI para análise.
 
-* Armazenamento inicial de dados processados no formato otimizado Delta.
+* Armazenamento inicial de dados processados no formato otimizado Parquet.
 
 ## Visão Geral do Conjunto de Dados
 
